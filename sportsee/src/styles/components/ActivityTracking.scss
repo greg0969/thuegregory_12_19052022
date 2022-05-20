@@ -1,0 +1,86 @@
+
+.activityContainer {
+    margin: 1em 0;
+
+    h1 {
+        display: flex;
+        width: 8.8em;
+        .username {
+            margin: 0;
+            color: red;
+            margin-left: 5%;
+        }
+    }
+    h2 {
+        font-size: 18px;
+    }
+    section {
+        display: flex;
+    }
+    .caloriesTracking {
+        
+        div {
+           margin-bottom: 6.3em;
+           display: flex;
+           flex-wrap: wrap;
+           img {
+            margin-right: 1em;
+            padding: 1.25em;
+            object-fit: contain;
+            }
+           
+            .flame {
+                border-radius: 6px;
+                background-color: rgb(255 0 0 / 6.61%);
+            }
+            .proteinLogo {
+                background-color: rgb(74 184 255 / 10%);
+            }
+            .glucideLogo {
+                background-color: rgb(249 206 35 / 10.17%);
+            }
+            .lipideLogo {
+                background-color: rgb(253 81 129 / 10%);
+            }
+            span {
+                p {
+                    margin: 0;
+                    
+                    &:nth-child(1) {
+                        margin-bottom: 0.1em;
+                        font-weight: 700;
+                        font-size: 20px;
+                    }
+                    &:nth-child(2) {
+                        color: #74798C;
+                        font-size: 14px;
+                    } 
+                }
+            }
+            
+        }
+        
+    }
+    .dailyActivity {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 835px;
+        margin-top: 7em;
+        .legend {
+            display: flex;
+
+        }
+        .recharts-wrapper {
+
+            .recharts-surface {
+                height: 206px;
+                // width: auto;
+                line {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+

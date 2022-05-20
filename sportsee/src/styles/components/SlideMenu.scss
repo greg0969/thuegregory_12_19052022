@@ -1,0 +1,39 @@
+.slideMenu {
+    background-color: black;
+    width: 117px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 6em;
+    ul {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+        height: 17.6em;
+        li {
+            list-style-type: none;
+            margin: 0.56em auto;
+            width: 55%;
+            height: 3.56em;
+            img {
+                background-color: white;
+                padding: 0.89em;
+                width: 1.78em;
+                border-radius: 6px;
+            }
+        }
+    }
+    p {
+        display: flex;
+        flex-direction: column;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        align-self: center;
+        margin-top: 13.7em;
+        font-size: 12px;
+        transform: rotate(180deg);
+    }
+}

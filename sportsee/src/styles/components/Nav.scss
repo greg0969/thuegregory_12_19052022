@@ -1,0 +1,14 @@
+nav {
+    width: 100%;
+    align-self: center;
+    ul {
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        li {
+            list-style-type: none;
+            font-size: 24px;
+            color: white;
+        }
+    }
+}

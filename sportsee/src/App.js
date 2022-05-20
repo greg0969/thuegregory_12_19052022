@@ -1,12 +1,17 @@
 import UserProfil from "./pages/UserProfil";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import "./styles/index.scss";
 
 
 function App() {
+
   return (
-    <div className="App">
-        <UserProfil />
-    </div>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<UserProfil />} /> 
+          <Route path="/user/:id" element={<UserProfil />} /> 
+        </Routes>
+    </BrowserRouter>
   );
 }
 
