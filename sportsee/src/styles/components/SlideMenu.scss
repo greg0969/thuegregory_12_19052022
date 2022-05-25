@@ -1,11 +1,11 @@
 .slideMenu {
     background-color: black;
-    width: 117px;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 6em;
+    margin-right: 5.9em;
+    padding: 0 1.5em;
     ul {
         flex-direction: column;
         display: flex;
@@ -16,7 +16,7 @@
         li {
             list-style-type: none;
             margin: 0.56em auto;
-            width: 55%;
+            width: auto;
             height: 3.56em;
             img {
                 background-color: white;

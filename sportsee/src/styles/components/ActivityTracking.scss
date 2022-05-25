@@ -1,7 +1,7 @@
 
 .activityContainer {
     margin: 1em 0;
-
+    width: 78%;
     h1 {
         display: flex;
         width: 8.8em;
@@ -16,6 +16,7 @@
     }
     section {
         display: flex;
+        flex-wrap: wrap;
     }
     .caloriesTracking {
         
@@ -65,7 +66,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        width: 835px;
+        width: 100%;
         margin-top: 7em;
         .legend {
             display: flex;
@@ -81,6 +82,37 @@
                 }
             }
         }
+    }
+    .length {        
+        width: 258px;
+        height: 263px;
+    }
+    .intensity {
+        width: 258px;
+        height: 263px;
+        background-color: #282D30;
+        .recharts-wrapper {
+            color: white;
+            .recharts-surface {
+                
+                .recharts-polar-grid-angle {
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+        }
+       
+    }
+    .score {
+        width: 258px;
+        height: 263px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h3 {
+            align-self: start;
+        }
+    
     }
 }
 
