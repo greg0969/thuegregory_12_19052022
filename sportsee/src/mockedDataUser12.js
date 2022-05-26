@@ -7,12 +7,14 @@ const USER_MAIN_DATA = [
             age: 31,
         },
         todayScore: 0.12,
-        keyData: {
-            calorieCount: 1930,
-            proteinCount: 155,
-            carbohydrateCount: 290,
-            lipidCount: 50
-        }
+        keyData : 
+            {
+                calorieCount: "1930 kCal" ,
+                proteinCount: "155 g",
+                carbohydrateCount: "290 g",
+                lipidCount: "50 g"
+            }
+        
     }
 ]
 

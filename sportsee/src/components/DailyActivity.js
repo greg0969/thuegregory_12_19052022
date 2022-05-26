@@ -11,9 +11,9 @@ function DailyActivity() {
 
     return (
         <div className="dailyActivity">
-            <ResponsiveContainer width="100%" height="50%" aspect={4}>
+            {/* <ResponsiveContainer width="100%" height="50%" aspect={3}> */}
                 <BarChart
-                    width={500}
+                    width={626}
                     height={207}
                     data={data}
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
@@ -24,7 +24,7 @@ function DailyActivity() {
                     <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} />
                     <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} />
                 </BarChart>
-            </ResponsiveContainer>
+            {/* </ResponsiveContainer> */}
         </div>
 
     )

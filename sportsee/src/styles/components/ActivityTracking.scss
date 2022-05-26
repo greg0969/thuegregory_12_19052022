@@ -17,9 +17,10 @@
     section {
         display: flex;
         flex-wrap: wrap;
+        margin-top: 7em;
     }
     .caloriesTracking {
-        
+        margin-top: -11.56em;
         div {
            margin-bottom: 6.3em;
            display: flex;
@@ -30,17 +31,17 @@
             object-fit: contain;
             }
            
-            .flame {
+            .calorieCount {
                 border-radius: 6px;
                 background-color: rgb(255 0 0 / 6.61%);
             }
-            .proteinLogo {
+            .proteinCount {
                 background-color: rgb(74 184 255 / 10%);
             }
-            .glucideLogo {
+            .carbohydrateCount {
                 background-color: rgb(249 206 35 / 10.17%);
             }
-            .lipideLogo {
+            .lipidCount {
                 background-color: rgb(253 81 129 / 10%);
             }
             span {
@@ -64,10 +65,8 @@
     }
     .dailyActivity {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
-        width: 100%;
-        margin-top: 7em;
         .legend {
             display: flex;
 
@@ -84,12 +83,12 @@
         }
     }
     .length {        
-        width: 258px;
-        height: 263px;
+        width: 208px;
+        height: 213px;
     }
     .intensity {
-        width: 258px;
-        height: 263px;
+        width: 208px;
+        height: 213px;
         background-color: #282D30;
         .recharts-wrapper {
             color: white;
@@ -104,8 +103,8 @@
        
     }
     .score {
-        width: 258px;
-        height: 263px;
+        width: 208px;
+        height: 213px;
         display: flex;
         justify-content: center;
         align-items: center;
