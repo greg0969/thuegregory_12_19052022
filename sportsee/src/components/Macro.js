@@ -1,4 +1,4 @@
-import { USER_MAIN_DATA } from "../mockedDataUser12";
+import { USER_MAIN_DATA } from "../api/mockedDataUser12";
 import logo from "../assets/flame.png";
 import proteinCount from "../assets/food.png";
 import carbohydrateCount from "../assets/glucides.png";
@@ -7,7 +7,6 @@ import lipidCount from "../assets/cheeseburger.png";
 function Macro () {
     
     const macroArray = Object.entries(USER_MAIN_DATA[0].keyData)
-    // console.log(macroArray[0])
     
     return (
         <div className="caloriesTracking">
@@ -20,7 +19,7 @@ function Macro () {
                 
                 <span>
                     <p>{macroData[1]}</p>
-                    {macroData[0] === "calorieCount" && <p>Calorie</p>}
+                    {macroData[0] === "calorieCount" && <p>Calories</p>}
                     {macroData[0] === "proteinCount" && <p>Protéines</p>}
                     {macroData[0] === "carbohydrateCount" && <p>Glucides</p>}
                     {macroData[0] === "lipidCount" && <p>Lipides</p>}

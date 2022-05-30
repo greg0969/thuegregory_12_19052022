@@ -2,7 +2,7 @@ import DailyActivity from "./DailyActivity";
 import Length from "./Length";
 import Intensity from "./Intensity";
 import Score from "./Score";
-import { USER_MAIN_DATA} from "../mockedDataUser12";
+import { USER_MAIN_DATA} from "../api/mockedDataUser12";
 import Macro from "./Macro";
 
 function ActivityTracking() {
@@ -15,7 +15,6 @@ function ActivityTracking() {
       <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
       <section>
         <DailyActivity />
-        
         <Length />
         <Intensity />
         <Score />

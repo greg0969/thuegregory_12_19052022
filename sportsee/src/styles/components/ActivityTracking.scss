@@ -1,117 +1,167 @@
-
 .activityContainer {
-    margin: 1em 0;
-    width: 78%;
-    h1 {
+  margin: 1em 0;
+  width: 78%;
+  h1 {
+    display: flex;
+    width: 8.8em;
+    .username {
+      margin: 0;
+      color: red;
+      margin-left: 5%;
+    }
+  }
+  h2 {
+    font-size: 18px;
+  }
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 7em;
+  }
+  .intensity,
+  .length,
+  .score {
+    margin: 0 0.85em;
+    width: 178px;
+    height: 178px;
+  }
+  .caloriesTracking {
+    margin-top: -13.56em;
+    div {
+      margin-bottom: 2.5em;
+      display: flex;
+      flex-wrap: wrap;
+      img {
+        margin-right: 1em;
+        padding: 1.25em;
+        object-fit: contain;
+      }
+
+      .calorieCount {
+        border-radius: 6px;
+        background-color: rgb(255 0 0 / 6.61%);
+      }
+      .proteinCount {
+        background-color: rgb(74 184 255 / 10%);
+      }
+      .carbohydrateCount {
+        background-color: rgb(249 206 35 / 10.17%);
+      }
+      .lipidCount {
+        background-color: rgb(253 81 129 / 10%);
+      }
+      span {
+        p {
+          margin: 0;
+
+          &:nth-child(1) {
+            margin-bottom: 0.1em;
+            font-weight: 700;
+            font-size: 20px;
+          }
+          &:nth-child(2) {
+            color: #74798c;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .dailyActivity {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .dailyHeader {
+      display: flex;
+      justify-content: space-between;
+      width: 72%;
+      h3 {
+        font-size: 15px;
+        font-weight: 500;
+        color: #20253a;
+      }
+      ul {
         display: flex;
-        width: 8.8em;
-        .username {
-            margin: 0;
+        padding: 0;
+        justify-content: space-around;
+        width: 77%;
+
+        li {
+          color: #74798c;
+          list-style-type: none;
+          font-size: 14px;
+          &::before {
+            content: "•";
+            font-size: 23px;
+            margin-right: 0.3em;
+            vertical-align: middle;
+          }
+        }
+        li:last-child {
+          &::before {
             color: red;
-            margin-left: 5%;
+          }
         }
+      }
     }
-    h2 {
-        font-size: 18px;
+    .tooltip {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0 auto;
+      width: 40px;
+      height: 60px;
+      color: white;
+      background-color: #e60000;
+      .tooltip-item {
+        font-size: 7px;
+      }
     }
-    section {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 7em;
-    }
-    .caloriesTracking {
-        margin-top: -11.56em;
-        div {
-           margin-bottom: 6.3em;
-           display: flex;
-           flex-wrap: wrap;
-           img {
-            margin-right: 1em;
-            padding: 1.25em;
-            object-fit: contain;
-            }
-           
-            .calorieCount {
-                border-radius: 6px;
-                background-color: rgb(255 0 0 / 6.61%);
-            }
-            .proteinCount {
-                background-color: rgb(74 184 255 / 10%);
-            }
-            .carbohydrateCount {
-                background-color: rgb(249 206 35 / 10.17%);
-            }
-            .lipidCount {
-                background-color: rgb(253 81 129 / 10%);
-            }
-            span {
-                p {
-                    margin: 0;
-                    
-                    &:nth-child(1) {
-                        margin-bottom: 0.1em;
-                        font-weight: 700;
-                        font-size: 20px;
-                    }
-                    &:nth-child(2) {
-                        color: #74798C;
-                        font-size: 14px;
-                    } 
-                }
-            }
-            
+    .recharts-wrapper {
+      .recharts-surface {
+        height: 206px;
+        line {
+          display: none;
         }
-        
+      }
     }
-    .dailyActivity {
+  }
+  .length {
+    .tooltip {
+      background-color: white;
+      border-radius: 5px;
+      padding: 0.1em 0.5em;
+      &-item {
+        font-size: 8px;
+      }
+    }
+    .xAxis {
+        position: absolute;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        .legend {
-            display: flex;
+        justify-content: space-around;
+        width: 260px;
+        color: white;
+        opacity: 0.5;
 
-        }
-        .recharts-wrapper {
-
-            .recharts-surface {
-                height: 206px;
-                // width: auto;
-                line {
-                    display: none;
-                }
-            }
-        }
     }
-    .length {        
-        width: 208px;
-        height: 213px;
+  }
+  .intensity {
+    background-color: #282d30;
+    border-radius: 5px;
+    .recharts-responsive-container {
+      margin: auto;
+      .recharts-wrapper {
+        color: white;
+      }
     }
-    .intensity {
-        width: 208px;
-        height: 213px;
-        background-color: #282D30;
-        .recharts-wrapper {
-            color: white;
-            .recharts-surface {
-                
-                .recharts-polar-grid-angle {
-                    width: 180px;
-                    height: 180px;
-                }
-            }
-        }
-       
+  }
+  .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      align-self: start;
     }
-    .score {
-        width: 208px;
-        height: 213px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h3 {
-            align-self: start;
-        }
-    
-    }
+  }
 }
-

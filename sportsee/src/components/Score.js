@@ -1,5 +1,5 @@
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Label } from 'recharts';
-import { USER_MAIN_DATA } from "../mockedDataUser12";
+import { USER_MAIN_DATA } from "../api/mockedDataUser12";
 
 function Score() {
 
