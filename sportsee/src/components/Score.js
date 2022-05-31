@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Label } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 import { USER_MAIN_DATA } from "../api/mockedDataUser12";
 
 function Score() {
@@ -7,20 +7,21 @@ function Score() {
         { id: "1", name: "score", value: 50 },
         { id: "2", name: "score", value: USER_MAIN_DATA[0].todayScore * 100 }
     ];
-
-
+  
     return (
+        
         <div className="score">
             <h3>Score</h3>
+            <div className="score__container">
+                <div>
+                    <span className='percent'>{USER_MAIN_DATA[0].todayScore*100}% <br /></span>
+                    <span className='desc'>
+                        de votre <br />
+                        objectif
+                    </span>
+                </div>
+            </div>
             <PieChart width={160} height={160}>
-                <text
-                    x="50%"
-                    y="50%"
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                >
-                    {USER_MAIN_DATA[0].todayScore*100}%
-                </text>
                 <Pie
                     data={data}
                     dataKey="value"

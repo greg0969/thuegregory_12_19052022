@@ -74,17 +74,18 @@
     .dailyHeader {
       display: flex;
       justify-content: space-between;
-      width: 72%;
+      width: 73%;
       h3 {
         font-size: 15px;
         font-weight: 500;
         color: #20253a;
+        width: 40%;
       }
       ul {
         display: flex;
         padding: 0;
-        justify-content: space-around;
-        width: 77%;
+        justify-content: space-between;
+        width: 41%;
 
         li {
           color: #74798c;
@@ -121,9 +122,6 @@
     .recharts-wrapper {
       .recharts-surface {
         height: 206px;
-        line {
-          display: none;
-        }
       }
     }
   }
@@ -158,10 +156,37 @@
   }
   .score {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    &__container {
+      background-color: white;
+      position: absolute;
+      top: 69%;
+      left: 61.5%;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .percent {
+        justify-content: center;
+        display: flex;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 0.3em;
+      }
+      .desc {
+        color: #74798C;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
     h3 {
       align-self: start;
+      margin: unset;
     }
   }
 }

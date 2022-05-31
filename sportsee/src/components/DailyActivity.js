@@ -1,9 +1,9 @@
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, CartesianGrid } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import { USER_ACTIVITY } from "../api/mockedDataUser12";
 
 /**
  * @description Component daily activity
- * @param {object} activity activity datas of user
+ * @param {object} data activity datas of user
  * @returns ReactComponent
  */
 
@@ -46,10 +46,14 @@ function DailyActivity() {
                 data={data}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                 wrapperStyle={{ height: "206px" }}>
-                <CartesianGrid strokeDasharray="1 1" vertical={false} />
-                <XAxis dataKey="name" />
+                <CartesianGrid strokeDasharray="2 2" vertical={false}/>
+                <XAxis 
+                        
+                        tickLine={false}
+                        axisLine={{ stroke: "white" }}
+                        padding={{ left: -48, right: -48 }} 
+                        dataKey="name" />
                 <YAxis
-                    // yAxisId="kilogram"
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#9B9EAC" }}
@@ -58,6 +62,7 @@ function DailyActivity() {
                     dataKey="Poids (kg)"
                     tickCount="3"
                     domain={["dataMin-3"]}
+                    padding={{ bottom: 15 }}
                 />
                 <Tooltip
                     position={{ y: 35 }}
