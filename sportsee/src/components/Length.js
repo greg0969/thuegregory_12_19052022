@@ -1,20 +1,21 @@
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-import { USER_AVERAGE_SESSIONS } from "../api/mockedDataUser12";
+import { USER_AVERAGE_SESSIONS } from "../User12/USER_AVERAGE_SESSIONS";
 
 
-function Length() {
+function Length(index) {
 
+    // let totalLength = 0;
+    // let average = 0;
+    // const data = [];
+    let sessionsData = USER_AVERAGE_SESSIONS.sessions
+    // const dayArray = ["L", "M", "M", "J", "V", "S", "D"]
+    // for (let i = 0; i < sessionsData.length; i++) {
+    //     data.push({ "id": i+1,"day": sessionsData[i].day, "sessionLength": sessionsData[i].sessionLength });
+    //     totalLength += data[i].sessionLength
 
-    let totalLength = 0;
-    let average = 0;
-    const data = [];
-    const dayArray = ["L", "M", "M", "J", "V", "S", "D"]
-    for (let y = 0; y < USER_AVERAGE_SESSIONS[0].sessions.length; y++) {
-        data.push({ "name": dayArray[7], "day": USER_AVERAGE_SESSIONS[0].sessions[y].day, "sessionLength": USER_AVERAGE_SESSIONS[0].sessions[y].sessionLength });
-        totalLength += data[y].sessionLength
-    }
-
-    average = totalLength / data.length
+    // }
+    // console.log(data.id)
+    // average = totalLength / data.length
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -28,24 +29,24 @@ function Length() {
         return null;
     };
 
-
     return (
         <div className="length">
+            <h3>Durée moyenne des sessions</h3>
+            <div className='shadow'>
 
-
+            </div>
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                     width={260}
                     height={260}
-                    data={data}
+                    data={sessionsData}
                     style={{
-                        background: "#FF0000",
+                        background: "rgba(255,0,0,1)",
                         borderRadius: "5px",
                     }}
                     margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
                 >
-                    <XAxis axisLine={false} tickLine={false} dataKey="name" />
-                    <YAxis hide={true} padding={{ top: 50, bottom: 10 }} />
+                    <YAxis hide={true} padding={{ top: 80, bottom: 40}} />
                     <Tooltip
                         content={<CustomTooltip />}
                         cursor={{
@@ -64,6 +65,7 @@ function Length() {
                     />
                 </AreaChart>
             </ResponsiveContainer>
+            <span className='dayAxis'>{sessionsData.map(sessionsData => (<p key={1}>{sessionsData.day}</p>))}</span>
         </div>
 
 

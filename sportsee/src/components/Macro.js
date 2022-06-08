@@ -1,4 +1,4 @@
-import { USER_MAIN_DATA } from "../api/mockedDataUser12";
+import { USER_MAIN_DATA } from "../User12/USER_MAIN_DATA";
 import logo from "../assets/flame.png";
 import proteinCount from "../assets/food.png";
 import carbohydrateCount from "../assets/glucides.png";

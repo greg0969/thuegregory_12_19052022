@@ -1,5 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import { USER_PERFORMANCE } from "../api/mockedDataUser12";
+import { USER_PERFORMANCE } from "../User12/USER_PERFORMANCE";
 
 function Intensity() {
 

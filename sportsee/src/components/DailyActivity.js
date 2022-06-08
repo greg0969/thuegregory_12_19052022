@@ -1,5 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
-import { USER_ACTIVITY } from "../api/mockedDataUser12";
+import { USER_ACTIVITY } from "../User12/USER_ACTIVITY";
 
 /**
  * @description Component daily activity
@@ -40,30 +40,40 @@ function DailyActivity() {
                 </ul>
             </div>
             <BarChart
-                width={626}
+                width={600}
                 height={207}
                 barGap={8}
                 data={data}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                 wrapperStyle={{ height: "206px" }}>
-                <CartesianGrid strokeDasharray="2 2" vertical={false}/>
-                <XAxis 
-                        
-                        tickLine={false}
-                        axisLine={{ stroke: "white" }}
-                        padding={{ left: -48, right: -48 }} 
-                        dataKey="name" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} />
+                <XAxis
+                    tickFormatter={(tick) => `${tick + 1}`}
+                    tickLine={false}
+                    tick={{ fill: "#9B9EAC" }}
+                    tickMargin={10}
+                    axisLine={{ stroke: "#9B9EAC" }}
+                    padding={{ left: -33, right: -33 }}
+                    fontSize={14}
+                />
                 <YAxis
+
+                    dataKey="Calories brûlées (kCal)"
+                    hide={true}
+                    tickCount="3"
+                    orientation="left"
+                />
+                <YAxis
+                    hide={false}
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#9B9EAC" }}
                     tickMargin={25}
                     orientation="right"
                     dataKey="Poids (kg)"
-                    tickCount="3"
-                    domain={["dataMin-3"]}
                     padding={{ bottom: 15 }}
                 />
+
                 <Tooltip
                     position={{ y: 35 }}
                     content={<CustomTooltip />}
@@ -73,8 +83,8 @@ function DailyActivity() {
                         strokeWidth: 10,
                     }}
                 />
-                <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} />
-                <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} />
+                <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} radius={[3, 3, 0, 0]} />
             </BarChart>
         </div>
 
