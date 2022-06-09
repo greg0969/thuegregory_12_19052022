@@ -2,6 +2,9 @@ nav {
     width: 100%;
     align-self: center;
     ul {
+        a {
+            text-decoration: none;
+        }
         padding: 0;
         display: flex;
         justify-content: space-around;

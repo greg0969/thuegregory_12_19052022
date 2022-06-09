@@ -40,7 +40,7 @@ function DailyActivity() {
                 </ul>
             </div>
             <BarChart
-                width={600}
+                width={625}
                 height={207}
                 barGap={8}
                 data={data}
@@ -53,27 +53,30 @@ function DailyActivity() {
                     tick={{ fill: "#9B9EAC" }}
                     tickMargin={10}
                     axisLine={{ stroke: "#9B9EAC" }}
-                    padding={{ left: -33, right: -33 }}
+                    padding={{ left: -30, right: -30 }}
                     fontSize={14}
                 />
-                <YAxis
+          
 
-                    dataKey="Calories brûlées (kCal)"
-                    hide={true}
-                    tickCount="3"
-                    orientation="left"
+                <YAxis
+                    orientation='left'
+                    dataKey="Calories brûlées (kCal)"                    
+                    tickCount={3}
+                    hide
                 />
                 <YAxis
-                    hide={false}
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#9B9EAC" }}
                     tickMargin={25}
-                    orientation="right"
                     dataKey="Poids (kg)"
-                    padding={{ bottom: 15 }}
+                    yAxisId='poid'
+                    orientation='right'
+                    tickCount={3}
+                    fontSize={14}
+                    domain={["dataMin - 1"]}
                 />
-
+                
                 <Tooltip
                     position={{ y: 35 }}
                     content={<CustomTooltip />}

@@ -1,4 +1,4 @@
-import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from "../User12/USER_AVERAGE_SESSIONS";
 
 

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import FetchButton from "../components/FetchButton";
-import FetchProvider, { FetchContext } from "../utils/context/contextApi";
+import FetchProvider from "../utils/context/contextApi";
 
-const User18 = "../api/User18/USER_MAIN_DATA";
+// const User18 = "../api/User18/USER_MAIN_DATA";
 
 function Home() {
 
