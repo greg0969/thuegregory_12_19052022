@@ -6,6 +6,9 @@
     &__group {
       padding: 4em;
       border-radius: 25px;
+      .fetchButton {
+        text-align: center;
+      }
     }
     &__logo {
       margin-top: 5rem;

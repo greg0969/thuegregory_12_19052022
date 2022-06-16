@@ -1,5 +1,4 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
-import { USER_ACTIVITY } from "../User12/USER_ACTIVITY";
 
 /**
  * @description Component daily activity
@@ -7,12 +6,8 @@ import { USER_ACTIVITY } from "../User12/USER_ACTIVITY";
  * @returns ReactComponent
  */
 
-function DailyActivity() {
-    const data = [];
-
-    for (let y = 0; y < USER_ACTIVITY[0].sessions.length; y++) {
-        data.push({ "name": y + 1, "Poids (kg)": USER_ACTIVITY[0].sessions[y].kilogram, "Calories brûlées (kCal)": USER_ACTIVITY[0].sessions[y].calories });
-    }
+function DailyActivity({ activityData }) {
+    
 
     /**
     * Customized Tooltip
@@ -43,7 +38,7 @@ function DailyActivity() {
                 width={625}
                 height={207}
                 barGap={8}
-                data={data}
+                data={activityData}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
                 wrapperStyle={{ height: "206px" }}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -60,7 +55,7 @@ function DailyActivity() {
 
                 <YAxis
                     orientation='left'
-                    dataKey="Calories brûlées (kCal)"                    
+                    dataKey="calories"                    
                     tickCount={3}
                     hide
                 />
@@ -69,7 +64,7 @@ function DailyActivity() {
                     axisLine={false}
                     tick={{ fill: "#9B9EAC" }}
                     tickMargin={25}
-                    dataKey="Poids (kg)"
+                    dataKey="kilogram"
                     yAxisId='poid'
                     orientation='right'
                     tickCount={3}
@@ -86,8 +81,8 @@ function DailyActivity() {
                         strokeWidth: 10,
                     }}
                 />
-                <Bar dataKey="Poids (kg)" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
-                <Bar dataKey="Calories brûlées (kCal)" fill="#E60000" barSize={7} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="kilogram" fill="#282D30" barSize={7} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="calories" fill="#E60000" barSize={7} radius={[3, 3, 0, 0]} />
             </BarChart>
         </div>
 

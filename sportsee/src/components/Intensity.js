@@ -1,29 +1,40 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import { USER_PERFORMANCE } from "../User12/USER_PERFORMANCE";
+// import Erreur from "./Erreur";
 
-function Intensity() {
 
-    const data = [];
+function Intensity({ perfData }) {
 
-    for (let y = 0; y < USER_PERFORMANCE[0].data.length; y++) {
-        data.push({ "name": USER_PERFORMANCE[0].kind[y+1], "Perf": USER_PERFORMANCE[0].data[y].value });
+    // console.log(perfData)
+
+    const label = [
+        "Intensité",
+        "Vitesse",
+        "Force",
+        "Endurance",
+        "Energie",
+        "Cardio",
+    ];
+
+    // Customize tick with Label
+    function customTick(tick) {
+        return label[tick - 1];
     }
-
 
     return (
         <div className="intensity">
             <ResponsiveContainer width="100%">
-                <RadarChart 
-                cx="50%" cy="50%" outerRadius="73%" innerRadius="7%" data={data} >
+                <RadarChart
+                    cx="50%" cy="50%" outerRadius="73%" innerRadius="7%" data={perfData} >
                     <PolarGrid />
-                    <PolarAngleAxis 
-                        fontSize={12} 
-                        dataKey="name" 
+                    <PolarAngleAxis
+                        fontSize={12}
+                        dataKey="kind"
                         stroke="white"
                         tickLine={false}
+                        tickFormatter={customTick}
                         style={{ fontSize: "7px" }}
                         cy={3} />
-                    <Radar name="name" dataKey="Perf" fill="#FF0101B2" fillOpacity="70%" />
+                    <Radar name="name" dataKey="value" fill="#FF0101B2" fillOpacity="70%" />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

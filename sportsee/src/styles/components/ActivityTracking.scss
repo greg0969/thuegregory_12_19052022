@@ -26,17 +26,36 @@
     height: 178px;
   }
   .caloriesTracking {
-    margin-top: -13.56em;
-    div {
-      margin-bottom: 2.5em;
+    margin-top: -15.56em;
+    display: flex;
+    flex-direction: column;
+    width: 152px;
+    .macroContainer {
+      margin-bottom: 3.5em;
       display: flex;
-      flex-wrap: wrap;
+      
       img {
         margin-right: 1em;
-        padding: 1.25em;
+        padding: 1em;
         object-fit: contain;
+        width: 15px;
+        height: 15px;
       }
-
+      
+    p {
+      margin: 0;
+    }
+    .key {
+      margin-bottom: 0.1em;
+      font-weight: 700;
+      font-size: 20px;
+      width: 5em;
+    }
+    .value {
+      color: #74798c;
+      font-size: 14px;
+      font-weight: 500;
+    }
       .calorieCount {
         border-radius: 6px;
         background-color: rgb(255 0 0 / 6.61%);
@@ -50,21 +69,7 @@
       .lipidCount {
         background-color: rgb(253 81 129 / 10%);
       }
-      span {
-        p {
-          margin: 0;
-
-          &:nth-child(1) {
-            margin-bottom: 0.1em;
-            font-weight: 700;
-            font-size: 20px;
-          }
-          &:nth-child(2) {
-            color: #74798c;
-            font-size: 14px;
-          }
-        }
-      }
+      
     }
   }
   .dailyActivity {
@@ -127,14 +132,29 @@
     }
   }
   .length {
+    
     .shadow {
-      background: linear-gradient(to right, rgba(0, 0, 0, 1),rgb(0, 0, 0, 0.1));
-      width: 7.8%;
-      opacity: 35%;
-      z-index: 2;
-      height: inherit;
-      position: absolute;
+      background: rgba(0, 0, 0, 0.1);
+      width: 79px;
+      display: flex;
+      flex-direction: column;
+      height: 178px;
+      justify-content: center;
+      .tooltip {
+        margin-left: 0.3em;
+        justify-content: center;
+        background-color: white;
+        width: 39px;
+        height: 25px;
+        &-item {
+          font-size: 8px;
+          align-self: center;
+          text-align: center;
+          font-weight: 500;
+        }
+      } 
     }
+
     h3 {
       color: white;
       font-size: 12px;
@@ -144,14 +164,7 @@
       left: 35.5%;
       z-index: 2;
     }
-    .tooltip {
-      background-color: white;
-      border-radius: 5px;
-      padding: 0.1em 0.5em;
-      &-item {
-        font-size: 8px;
-      }
-    } 
+    
     .dayAxis {
       display: flex;
       font-size: 12px;

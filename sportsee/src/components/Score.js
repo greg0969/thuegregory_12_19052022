@@ -1,11 +1,10 @@
 import { PieChart, Pie, Cell } from 'recharts';
-import { USER_MAIN_DATA } from "../User12/USER_MAIN_DATA";
 
-function Score() {
+function Score({ scoreData }) {
 
     const data = [
         { id: "1", name: "score", value: 50 },
-        { id: "2", name: "score", value: USER_MAIN_DATA[0].todayScore * 100 }
+        { id: "2", name: "score", value: scoreData * 100 }
     ];
   
     return (
@@ -14,7 +13,7 @@ function Score() {
             <h3>Score</h3>
             <div className="score__container">
                 <div>
-                    <span className='percent'>{USER_MAIN_DATA[0].todayScore*100}% <br /></span>
+                    <span className='percent'>{scoreData*100}% <br /></span>
                     <span className='desc'>
                         de votre <br />
                         objectif

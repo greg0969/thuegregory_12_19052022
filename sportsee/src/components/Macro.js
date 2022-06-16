@@ -1,33 +1,42 @@
-import { USER_MAIN_DATA } from "../User12/USER_MAIN_DATA";
 import logo from "../assets/flame.png";
 import proteinCount from "../assets/food.png";
 import carbohydrateCount from "../assets/glucides.png";
 import lipidCount from "../assets/cheeseburger.png";
 
-function Macro () {
-    
-    const macroArray = Object.entries(USER_MAIN_DATA[0].keyData)
-    
-    return (
-        <div className="caloriesTracking">
-           {macroArray.map(macroData => (
-            <div key={macroData[0]} className={macroData[0]}>
-                {macroData[0] === "calorieCount" && <img className={macroData[0]} src={logo} alt="flame" />}
-                {macroData[0] === "proteinCount" && <img className={macroData[0]} src={proteinCount} alt="food" />}
-                {macroData[0] === "carbohydrateCount" && <img className={macroData[0]} src={carbohydrateCount} alt="glucides" />}
-                {macroData[0] === "lipidCount" && <img className={macroData[0]} src={lipidCount} alt="lipidCount" />}
-                
-                <span>
-                    <p>{macroData[1]}</p>
-                    {macroData[0] === "calorieCount" && <p>Calories</p>}
-                    {macroData[0] === "proteinCount" && <p>Protéines</p>}
-                    {macroData[0] === "carbohydrateCount" && <p>Glucides</p>}
-                    {macroData[0] === "lipidCount" && <p>Lipides</p>}
 
-                     
-                </span>
+function Macro ({ macroData }) {
+    
+
+    return (
+       
+        <div className="caloriesTracking">
+           
+            <div className="macroContainer">
+                <img className="calorieCount" src={logo} alt="flame" />
+                <div>
+                    {macroData.calorieCount &&<p className="key">{macroData.calorieCount} kCal</p>}<p className="value">Calories</p>
+                </div>
             </div>
-           ))}
+            <div className="macroContainer">
+                <img className="proteinCount" src={proteinCount} alt="food" />
+                <div>
+                    {macroData.proteinCount &&<p className="key">{macroData.proteinCount} g</p>}<p className="value">Protéines</p>
+                </div>
+            </div>
+            <div className="macroContainer"> 
+                <img className="carbohydrateCount" src={carbohydrateCount} alt="glucides" /> 
+                <div>
+                    {macroData.carbohydrateCount &&<p className="key">{macroData.carbohydrateCount} g</p>}<p className="value">Glucides</p>
+                </div>
+            </div>
+            <div className="macroContainer">
+                <img className="lipidCount" src={lipidCount} alt="lipidCount" /> 
+                <div>
+                    {macroData.lipidCount &&<p className="key">{macroData.lipidCount} g</p>}<p className="value">Lipides</p>
+                </div>
+       
+            </div>
+      
             
         </div>
         

@@ -19,16 +19,3 @@ function Nav() {
 
 export default Nav
 
-
-    // <NavLink to="/" >
-    //     <li className="link">Accueil</li>
-    // </NavLink>
-    // <NavLink to="/" >
-    //     <li className="link">Profil</li>
-    // </NavLink>
-    // <NavLink to="/" >
-    //     <li className="link">Réglage</li>
-    // </NavLink>
-    // <NavLink to="/">
-    //     <li className="link">Communauté</li>
-    // </NavLink>

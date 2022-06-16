@@ -6,11 +6,10 @@ function ApiFetch (url) {
     const [data, setData] = useState({});
 
     useEffect(() => {
-        fetch(url).then((result) => {
+        fetch(url).then((response) => response.json()).then((result) => {
             setData(result)
         })
     }, [url])
-
     return data ;
 }
 
