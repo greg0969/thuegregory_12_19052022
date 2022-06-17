@@ -11,6 +11,7 @@ function ApiFetch (url) {
         })
     }, [url])
     return data ;
+    
 }
 
 export default ApiFetch;

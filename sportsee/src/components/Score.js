@@ -6,7 +6,6 @@ function Score({ scoreData }) {
         { id: "1", name: "score", value: 50 },
         { id: "2", name: "score", value: scoreData * 100 }
     ];
-  
     return (
         
         <div className="score">

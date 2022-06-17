@@ -4,7 +4,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 
 function Intensity({ perfData }) {
 
-    // console.log(perfData)
 
     const label = [
         "Intensité",

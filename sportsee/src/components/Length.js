@@ -7,7 +7,26 @@ function Length({ averageSessionsData }) {
     // let totalLength = 0;
     // let average = 0;
     const sessionsData = averageSessionsData.sessions;
+    // const week = [
+    //     "L",
+    //     "M",
+    //     "M",
+    //     "J",
+    //     "V",
+    //     "S",
+    //     "D"
+    // ];
+    let week = [
+        { i: 1,day : 'L'},
+        { i: 2,day : 'M'},
+        { i: 3,day : 'M'},
+        { i: 4,day : 'J'},
+        { i: 5,day : 'V'},
+        { i: 6,day : 'S'},
+        { i: 7,day : 'D'},
 
+    ] 
+        
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
@@ -61,7 +80,7 @@ function Length({ averageSessionsData }) {
                 </AreaChart>
             </ResponsiveContainer>
 
-            {sessionsData && <span className='dayAxis'>{sessionsData.map(dayData => (<p key={dayData.day + dayData.sessionLength}>{dayData.day}</p>))}</span>}
+            {sessionsData && <span className='dayAxis'>{week.map(weekDay => (<p key={weekDay.i}>{weekDay.day}</p>))}</span>}
         </div>
 
 

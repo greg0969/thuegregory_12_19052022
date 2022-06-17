@@ -29,13 +29,14 @@ function ActivityTracking() {
 
   const {id} = useParams();
 
+  
   if (fetch === "api") {
     
      mainDataUrl = urlApi.userMainData(id)
      averageSessionsUrl = urlApi.userAverageSession(id)
      activityUrl = urlApi.userActivity(id)
      perfUrl = urlApi.userPerf(id)
-  
+    
   }
 
   if (fetch === "mock") {
@@ -45,26 +46,36 @@ function ActivityTracking() {
      perfUrl = urlMocked.userPerf(id)
   }  
 
-   mainData = ApiFetch(mainDataUrl)
-   averageSessionsData = ApiFetch(averageSessionsUrl)
-   activityData = ApiFetch(activityUrl)
-   perfData = ApiFetch(perfUrl)
-   userData = mainData.userInfos
-   macroData = mainData.keyData
-  
-   console.log(mainData)
+  mainData = ApiFetch(mainDataUrl)
+  averageSessionsData = ApiFetch(averageSessionsUrl)
+  activityData = ApiFetch(activityUrl)
+  perfData = ApiFetch(perfUrl)
+  userData = mainData.userInfos
+  macroData = mainData.keyData
 
-  return (
+  return fetch === "api" ?(
      
+    <div className="activityContainer">
+     { mainData.data &&<h1>Bonjour<p className="username">{mainData.data.userInfos.firstName}</p></h1>}
+      <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
+      <section>
+        {activityData.data &&<DailyActivity activityData={activityData.data.sessions}/>}
+        {averageSessionsData.data &&<Length averageSessionsData={averageSessionsData.data}/>}
+        {perfData.data &&<Intensity perfData={perfData.data.data}/>}
+        {mainData.data &&<Score scoreData={mainData.data.todayScore ?? mainData.data.score} />}
+        {mainData.data &&<Macro macroData={mainData.data.keyData} />} 
+      </section>
+    </div>
+  ):(
     <div className="activityContainer">
      {userData &&<h1>Bonjour<p className="username">{userData.firstName}</p></h1>}
       <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
       <section>
-        {/* <DailyActivity activityData={activityData.sessions}/>
+        <DailyActivity activityData={activityData.sessions}/>
         <Length averageSessionsData={averageSessionsData}/>
         <Intensity perfData={perfData.data}/>
         {mainData.todayScore &&<Score scoreData={mainData.todayScore} />}
-        {macroData &&<Macro macroData={macroData} />}  */}
+        {macroData &&<Macro macroData={macroData} />} 
       </section>
     </div>
   );
