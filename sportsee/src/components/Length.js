@@ -1,21 +1,18 @@
-import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area, LineChart, XAxis, Line } from 'recharts';
+import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area, XAxis } from 'recharts';
 // import Erreur from "./Erreur";
+import PropTypes from "prop-types";
 
+/**
+ * @description Component Length
+ * @param {array} averageSessionsData user's session
+ * @returns ReactComponent
+ */
 
 function Length({ averageSessionsData }) {
 
-    // let totalLength = 0;
-    // let average = 0;
+
     const sessionsData = averageSessionsData.sessions;
-    // const week = [
-    //     "L",
-    //     "M",
-    //     "M",
-    //     "J",
-    //     "V",
-    //     "S",
-    //     "D"
-    // ];
+   
     let week = [
         { i: 1,day : 'L'},
         { i: 2,day : 'M'},
@@ -98,5 +95,9 @@ function Length({ averageSessionsData }) {
 
     )
 }
+
+Length.propTypes = {
+    averageSessionsData: PropTypes.object,
+  };
 
 export default Length

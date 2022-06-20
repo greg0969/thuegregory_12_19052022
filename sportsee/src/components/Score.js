@@ -1,5 +1,13 @@
 import { PieChart, Pie, Cell } from 'recharts';
 
+import PropTypes from "prop-types";
+
+/**
+ * @description Component Score
+ * @param {object} scoreData user's score
+ * @returns ReactComponent
+ */
+
 function Score({ scoreData }) {
 
     const data = [
@@ -43,6 +51,10 @@ function Score({ scoreData }) {
 
     )
 }
+
+Score.propTypes = {
+    scoreData: PropTypes.number,
+  };
 
 export default Score
 

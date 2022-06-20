@@ -2,7 +2,13 @@ import logo from "../assets/flame.png";
 import proteinCount from "../assets/food.png";
 import carbohydrateCount from "../assets/glucides.png";
 import lipidCount from "../assets/cheeseburger.png";
+import PropTypes from "prop-types";
 
+/**
+ * @description Component Macro
+ * @param {object} macroData user's keyData
+ * @returns ReactComponent
+ */
 
 function Macro ({ macroData }) {
     
@@ -42,6 +48,10 @@ function Macro ({ macroData }) {
         
     )
 }
+
+Macro.propTypes = {
+    macroData: PropTypes.object,
+  };
 
 export default Macro
     

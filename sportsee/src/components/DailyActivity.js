@@ -1,8 +1,9 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
+import PropTypes from "prop-types";
 
 /**
- * @description Component daily activity
- * @param {object} data activity datas of user
+ * @description Component DailyActivity
+ * @param {object} activityData user's data activity
  * @returns ReactComponent
  */
 
@@ -88,6 +89,10 @@ function DailyActivity({ activityData }) {
 
     )
 }
+
+DailyActivity.propTypes = {
+    activityData: PropTypes.array,
+  };
 
 export default DailyActivity
 

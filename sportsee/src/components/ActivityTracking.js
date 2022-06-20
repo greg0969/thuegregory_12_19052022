@@ -3,16 +3,24 @@ import Length from "./Length";
 import Intensity from "./Intensity";
 import Score from "./Score";
 import Macro from "./Macro";
-import { useParams } from "react-router-dom";
+import { useParams,Navigate } from "react-router-dom";
 import ApiFetch from "../utils/apiFetch/ApiFetch";
-// import Erreur from "./Erreur";
 import {urlMocked} from "../utils/const/urlMocked"
 import {urlApi} from "../utils/const/urlApi";
 import { useContext } from "react";
 import { FetchContext } from "../utils/context/contextApi";
+// import PropTypes from "prop-types";
+
+/**
+ * @description Component ActivityTracking
+ * @param {string} userData userName
+ * @returns ReactComponent
+ */
 
 
 function ActivityTracking() {
+
+  /* Utilisation du use context pour savoir si on récupère les data de l'API ou les donnéees mockées */
 
   const { fetch } = useContext(FetchContext)
 
@@ -29,15 +37,23 @@ function ActivityTracking() {
 
   const {id} = useParams();
 
-  
+  /* si on veut les données de l'API alors on utilise les urls de l'API */
+
+  // if (id === undefined) {
+  //   return (
+  //     <Navigate to="*" />
+  //   )
+  // }
+
   if (fetch === "api") {
     
      mainDataUrl = urlApi.userMainData(id)
      averageSessionsUrl = urlApi.userAverageSession(id)
      activityUrl = urlApi.userActivity(id)
      perfUrl = urlApi.userPerf(id)
-    
   }
+
+    /* si on veut les données mockées alors on utilise les urls des données mockées*/
 
   if (fetch === "mock") {
      mainDataUrl = urlMocked.userMainData(id)
@@ -46,13 +62,17 @@ function ActivityTracking() {
      perfUrl = urlMocked.userPerf(id)
   }  
 
+ console.log(fetch)
+
+  /* On fetch les donnée selon l'url */
+
   mainData = ApiFetch(mainDataUrl)
   averageSessionsData = ApiFetch(averageSessionsUrl)
   activityData = ApiFetch(activityUrl)
   perfData = ApiFetch(perfUrl)
   userData = mainData.userInfos
   macroData = mainData.keyData
-  console.log(fetch)
+
   return fetch === "api" ?(
      
     <div className="activityContainer">

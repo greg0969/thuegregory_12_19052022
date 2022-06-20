@@ -1,6 +1,12 @@
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 // import Erreur from "./Erreur";
+import PropTypes from "prop-types";
 
+/**
+ * @description Component Intensity
+ * @param {perfData} perfData user's perf
+ * @returns ReactComponent
+ */
 
 function Intensity({ perfData }) {
 
@@ -41,5 +47,10 @@ function Intensity({ perfData }) {
 
     )
 }
+
+Intensity.propTypes = {
+    perfData: PropTypes.array,
+  };
+  
 
 export default Intensity
