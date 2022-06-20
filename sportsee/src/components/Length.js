@@ -12,41 +12,36 @@ function Length({ averageSessionsData }) {
 
 
     const sessionsData = averageSessionsData.sessions;
-   
-    let week = [
-        { i: 1,day : 'L'},
-        { i: 2,day : 'M'},
-        { i: 3,day : 'M'},
-        { i: 4,day : 'J'},
-        { i: 5,day : 'V'},
-        { i: 6,day : 'S'},
-        { i: 7,day : 'D'},
 
-    ] 
-        
+    let week = [
+        { i: 1, day: 'L' },
+        { i: 2, day: 'M' },
+        { i: 3, day: 'M' },
+        { i: 4, day: 'J' },
+        { i: 5, day: 'V' },
+        { i: 6, day: 'S' },
+        { i: 7, day: 'D' },
+
+    ]
+
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
-                <div className='shadow'>
-                    <div className="tooltip">
-                        <p className="tooltip-item">{payload[0].value} min </p>
+                <div className='tooltipContainer'> 
+                    <div className='shadow'>
+                        <div className="tooltip">
+                            <p className="tooltip-item">{payload[0].value} min </p>
+                        </div>
                     </div>
                 </div>
+
 
             );
         }
 
         return null;
     };
-    const CustomXAxis = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <span className='dayAxis'>{week.map(weekDay => (<p key={weekDay.i}>{weekDay.day}</p>))}</span>
 
-
-            );
-        }
-    }
 
     return (
 
@@ -67,11 +62,11 @@ function Length({ averageSessionsData }) {
                     <YAxis hide={true} padding={{ top: 80, bottom: 40 }} />
                     <Tooltip
                         content={<CustomTooltip />}
+
                         cursor={{
                             stroke: "black",
                             strokeOpacity: 0,
                             strokeWidth: 40,
-
                         }}
                     />
 
@@ -82,14 +77,14 @@ function Length({ averageSessionsData }) {
                         stroke="white"
                         strokeWidth={1.2}
                         fill="#ff0101"
+                        activeDot={{ r: 3 }}
                     />
-                    
-                    {/* <XAxis content={<CustomXAxis />}/> */}
+
                 </AreaChart>
-                
+
             </ResponsiveContainer>
 
-            
+            <span className='dayAxis'>{week.map(weekDay => (<p key={weekDay.i}>{weekDay.day}</p>))}</span>
         </div>
 
 
@@ -98,6 +93,6 @@ function Length({ averageSessionsData }) {
 
 Length.propTypes = {
     averageSessionsData: PropTypes.object,
-  };
+};
 
 export default Length

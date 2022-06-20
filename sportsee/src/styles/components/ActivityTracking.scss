@@ -132,46 +132,59 @@
     }
   }
   .length {
-    
-    .shadow {
-      background: rgba(0, 0, 0, 0.1);
-      width: 79px;
-      display: flex;
-      flex-direction: column;
-      height: 178px;
-      justify-content: center;
-      .tooltip {
-        margin-left: 0.3em;
-        justify-content: center;
-        background-color: white;
-        width: 39px;
-        height: 25px;
-        &-item {
-          font-size: 8px;
-          align-self: center;
-          text-align: center;
-          font-weight: 500;
-        }
-      } 
-    }
+    overflow: hidden;
 
+    .tooltipContainer {
+      width: 1em;
+      position: relative;
+      right: 52%;
+      
+      .shadow {
+        background: rgba(0, 0, 0, 0.1);
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        height: 178px;
+        justify-content: center;
+        .tooltip {
+          margin-left: 0.35em;
+          justify-content: center;
+          background-color: white;
+          position: relative;
+          top: -1.5em;
+          width: 39px;
+          height: 25px;
+          &-item {
+            
+            font-size: 8px;
+            align-self: center;
+            text-align: center;
+            font-weight: 500;
+          }
+        } 
+      }
+    }
     h3 {
       color: white;
       font-size: 12px;
       font-weight: 500;
-      width: 8%;
-      position: absolute;
-      left: 35.5%;
-      z-index: 2;
+      width: 65%;
+      top: 0em;
+      position: relative;
+      z-index: 10;
+      right: -2em;
     }
-    
+    .recharts-responsive-container {
+      position: relative;
+      top: -2.85em;
+    }
     .dayAxis {
       display: flex;
       font-size: 12px;
-      position: absolute;
-      bottom: -4.5%;
-      left: 21.4em;
-      width: 16%;
+      position: relative;
+      z-index: 10;
+      width: auto;
+      bottom: 5.95em;
       p {
         display: flex;
         width: inherit;
@@ -187,6 +200,7 @@
       margin: auto;
       .recharts-wrapper {
         color: white;
+        
       }
     }
   }
@@ -195,11 +209,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .recharts-wrapper {
+      top: -2.2em;
+      
+    }
     &__container {
       background-color: white;
-      position: absolute;
-      top: 80%;
-      right: 32.6%;
+      position: relative;
+      top: 50%;
       width: 140px;
       height: 140px;
       border-radius: 50%;
@@ -207,6 +224,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      
       .percent {
         justify-content: center;
         display: flex;
@@ -224,6 +242,8 @@
       align-self: start;
       margin: unset;
       font-size: 15px;
+      position: relative;
+      top: 3em;
     }
   }
 }

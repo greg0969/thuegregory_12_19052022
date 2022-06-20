@@ -39,12 +39,7 @@ function ActivityTracking() {
 
   /* si on veut les données de l'API alors on utilise les urls de l'API */
 
-  // if (id === undefined) {
-  //   return (
-  //     <Navigate to="*" />
-  //   )
-  // }
-
+  
   if (fetch === "api") {
     
      mainDataUrl = urlApi.userMainData(id)
@@ -60,7 +55,9 @@ function ActivityTracking() {
      averageSessionsUrl = urlMocked.userAverageSession(id)
      activityUrl = urlMocked.userActivity(id)
      perfUrl = urlMocked.userPerf(id)
-  }  
+  }
+
+  
 
  console.log(fetch)
 
@@ -72,6 +69,12 @@ function ActivityTracking() {
   perfData = ApiFetch(perfUrl)
   userData = mainData.userInfos
   macroData = mainData.keyData
+
+  // if (mainData && averageSessionsData && activityData && perfData) {
+  //   return (
+  //     <Navigate to="*" />
+  //   )
+  // }
 
   return fetch === "api" ?(
      
