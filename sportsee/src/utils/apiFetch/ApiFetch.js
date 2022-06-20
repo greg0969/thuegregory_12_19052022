@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ConvertData from './ConvertData';
 
 
 function ApiFetch (url) {
@@ -7,7 +8,7 @@ function ApiFetch (url) {
 
     useEffect(() => {
         fetch(url).then((response) => response.json()).then((result) => {
-            setData(result)
+            setData(ConvertData(result,url))
         })
     }, [url])
     return data ;

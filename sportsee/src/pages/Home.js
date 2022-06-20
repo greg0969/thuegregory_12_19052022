@@ -24,9 +24,6 @@ function Home() {
             <Link to="user/18" className="home__user">
               Cecilia
             </Link>
-            <Link to="user/1" className="home__user">
-              inconnu
-            </Link>
           </div>
           <div className='fetchButton'>
             <button onClick={() => toggleFetch()}>

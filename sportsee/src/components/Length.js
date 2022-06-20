@@ -41,6 +41,15 @@ function Length({ averageSessionsData }) {
 
         return null;
     };
+    const CustomXAxis = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+            return (
+                <span className='dayAxis'>{week.map(weekDay => (<p key={weekDay.i}>{weekDay.day}</p>))}</span>
+
+
+            );
+        }
+    }
 
     return (
 
@@ -77,10 +86,13 @@ function Length({ averageSessionsData }) {
                         strokeWidth={1.2}
                         fill="#ff0101"
                     />
+                    
+                    {/* <XAxis content={<CustomXAxis />}/> */}
                 </AreaChart>
+                
             </ResponsiveContainer>
 
-            {sessionsData && <span className='dayAxis'>{week.map(weekDay => (<p key={weekDay.i}>{weekDay.day}</p>))}</span>}
+            
         </div>
 
 

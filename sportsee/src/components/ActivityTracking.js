@@ -52,7 +52,7 @@ function ActivityTracking() {
   perfData = ApiFetch(perfUrl)
   userData = mainData.userInfos
   macroData = mainData.keyData
-
+  console.log(fetch)
   return fetch === "api" ?(
      
     <div className="activityContainer">
