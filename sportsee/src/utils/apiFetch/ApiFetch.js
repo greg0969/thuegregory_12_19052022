@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Navigate } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
 import ConvertData from './ConvertData';
 
 
@@ -9,9 +9,9 @@ function ApiFetch (url) {
 
     useEffect(() => {
         fetch(url).then((response) => response.json()).then((result) => {
-            // setData(ConvertData(result,url))
-            setData(result)
-           
+            // console.log(result)
+            setData(ConvertData(result,url))
+            // setData(result)
         })
     }, [url])
     return data ;

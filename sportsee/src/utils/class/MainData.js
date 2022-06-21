@@ -1,9 +1,8 @@
 export default class MainData {
-    constructor (id,userInfos,todayScore,keyData) {
+    constructor (id,userInfos,score,todayScore,keyData) {
         this.id = id ;
         this.userInfos = userInfos;
-        this.todayScore = todayScore;
-        this.score = todayScore;
+        this.todayScore = todayScore||score;
         this.keyData = keyData;
 
     }

@@ -1,4 +1,4 @@
-import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area, XAxis } from 'recharts';
+import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 // import Erreur from "./Erreur";
 import PropTypes from "prop-types";
 

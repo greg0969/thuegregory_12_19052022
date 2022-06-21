@@ -16,13 +16,16 @@ import { FetchContext } from "../utils/context/contextApi";
  * @param {string} userData userName
  * @returns ReactComponent
  */
-
+ 
 
 function ActivityTracking() {
 
   /* Utilisation du use context pour savoir si on récupère les data de l'API ou les donnéees mockées */
 
   const { fetch } = useContext(FetchContext)
+
+  let nouveauTitre = "SportSee (using) " + fetch; 
+  document.title = nouveauTitre; 
 
   let mainData;
   let averageSessionsData;
@@ -38,7 +41,6 @@ function ActivityTracking() {
   const {id} = useParams();
 
   /* si on veut les données de l'API alors on utilise les urls de l'API */
-
   
   if (fetch === "api") {
     
@@ -56,11 +58,7 @@ function ActivityTracking() {
      activityUrl = urlMocked.userActivity(id)
      perfUrl = urlMocked.userPerf(id)
   }
-
   
-
- console.log(fetch)
-
   /* On fetch les donnée selon l'url */
 
   mainData = ApiFetch(mainDataUrl)
@@ -75,18 +73,18 @@ function ActivityTracking() {
   //     <Navigate to="*" />
   //   )
   // }
-
+  // console.log(mainData)
   return fetch === "api" ?(
      
     <div className="activityContainer">
-     { mainData.data &&<h1>Bonjour<p className="username">{mainData.data.userInfos.firstName}</p></h1>}
+     { userData &&<h1>Bonjour<p className="username">{userData.firstName}</p></h1>}
       <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
       <section>
-        {activityData.data &&<DailyActivity activityData={activityData.data.sessions}/>}
-        {averageSessionsData.data &&<Length averageSessionsData={averageSessionsData.data}/>}
-        {perfData.data &&<Intensity perfData={perfData.data.data}/>}
-        {mainData.data &&<Score scoreData={mainData.data.todayScore ?? mainData.data.score} />}
-        {mainData.data &&<Macro macroData={mainData.data.keyData} />} 
+        {activityData &&<DailyActivity activityData={activityData.sessions}/>}
+        {averageSessionsData &&<Length averageSessionsData={averageSessionsData}/>}
+        {perfData &&<Intensity perfData={perfData.data}/>}
+        {mainData &&<Score scoreData={mainData.todayScore ?? mainData.score} />}
+        {macroData &&<Macro macroData={macroData} />} 
       </section>
     </div>
   ):(
@@ -102,6 +100,7 @@ function ActivityTracking() {
       </section>
     </div>
   );
+
 }
 
 export default ActivityTracking;

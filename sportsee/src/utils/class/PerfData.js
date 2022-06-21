@@ -1,6 +1,6 @@
 export default class PerfData {
-    constructor (id,kind,data) {
-        this.userId = id ;
+    constructor (userId,kind,data) {
+        this.userId = userId ;
         this.kind = kind ;
         this.data = data ;
     }

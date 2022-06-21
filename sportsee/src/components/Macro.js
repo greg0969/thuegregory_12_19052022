@@ -12,7 +12,6 @@ import PropTypes from "prop-types";
 
 function Macro ({ macroData }) {
     
-
     return (
        
         <div className="caloriesTracking">

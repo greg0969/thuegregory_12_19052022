@@ -1,6 +1,6 @@
 export default class ActivityData {
-    constructor (id,sessions) {
-        this.userId = id ;
+    constructor (userId,sessions) {
+        this.userId = userId ;
         this.sessions = sessions
     }
 }
