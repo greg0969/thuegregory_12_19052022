@@ -21,7 +21,7 @@ function ApiFetch (url) {
         })
        
        
-    }, [url])
+    }, [url,data])
     
     
     console.log(data)
