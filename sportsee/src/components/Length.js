@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 /**
  * @description Component Length
  * @param {array} averageSessionsData user's session
- * @returns ReactComponent
+ * @returns {JSX} ReactComponent 
  */
 
 function Length({ averageSessionsData }) {
@@ -14,13 +14,13 @@ function Length({ averageSessionsData }) {
     const sessionsData = averageSessionsData.sessions;
 
     let week = [
-        { i: 1, day: 'L' },
-        { i: 2, day: 'M' },
-        { i: 3, day: 'M' },
-        { i: 4, day: 'J' },
-        { i: 5, day: 'V' },
-        { i: 6, day: 'S' },
-        { i: 7, day: 'D' },
+        { i: 1, day: "L" },
+        { i: 2, day: "M" },
+        { i: 3, day: "M" },
+        { i: 4, day: "J" },
+        { i: 5, day: "V" },
+        { i: 6, day: "S" },
+        { i: 7, day: "D" },
 
     ]
 

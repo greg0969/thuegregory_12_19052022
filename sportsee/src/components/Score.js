@@ -20,7 +20,7 @@ function Score({ scoreData }) {
             <h3>Score</h3>
             <div className="score__container">
                 <div>
-                    <span className='percent'>{scoreData*100}% <br /></span>
+                    {scoreData &&<span className='percent'>{scoreData*100}% <br /></span>}
                     <span className='desc'>
                         de votre <br />
                         objectif

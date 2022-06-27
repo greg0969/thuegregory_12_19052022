@@ -9,18 +9,18 @@ import FetchProvider from "./utils/context/contextApi";
 function App() {
 
   return (
+    
     <BrowserRouter>
       <FetchProvider>
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="/user/:id" element={<UserProfil />} />
           <Route path="*" element={<Erreur />} />
-
         </Routes>
       </FetchProvider>
 
     </BrowserRouter>
+    
   );
 }
 

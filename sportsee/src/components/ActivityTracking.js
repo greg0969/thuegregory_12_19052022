@@ -12,8 +12,7 @@ import { FetchContext } from "../utils/context/contextApi";
 // import PropTypes from "prop-types";
 
 /**
- * @description Component ActivityTracking
- * @param {string} userData userName
+ * @param {String} userData userName
  * @returns ReactComponent
  */
  
@@ -31,8 +30,6 @@ function ActivityTracking() {
   let averageSessionsData;
   let activityData;
   let perfData;
-  let userData ;
-  let macroData;
   let mainDataUrl;
   let averageSessionsUrl;
   let activityUrl;
@@ -40,8 +37,10 @@ function ActivityTracking() {
 
   const {id} = useParams();
 
+
   /* si on veut les données de l'API alors on utilise les urls de l'API */
   
+ 
   if (fetch === "api") {
     
      mainDataUrl = urlApi.userMainData(id)
@@ -58,45 +57,27 @@ function ActivityTracking() {
      activityUrl = urlMocked.userActivity(id)
      perfUrl = urlMocked.userPerf(id)
   }
-  
+
   /* On fetch les donnée selon l'url */
 
   mainData = ApiFetch(mainDataUrl)
   averageSessionsData = ApiFetch(averageSessionsUrl)
   activityData = ApiFetch(activityUrl)
   perfData = ApiFetch(perfUrl)
-  userData = mainData.userInfos
-  macroData = mainData.keyData
 
-  // if (mainData && averageSessionsData && activityData && perfData) {
-  //   return (
-  //     <Navigate to="*" />
-  //   )
-  // }
-  // console.log(mainData)
-  return fetch === "api" ?(
+
+
+  return (
      
     <div className="activityContainer">
-     { userData &&<h1>Bonjour<p className="username">{userData.firstName}</p></h1>}
+     { mainData &&<h1>Bonjour<p className="username">{mainData.userInfos.firstName}</p></h1>}
       <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
       <section>
         {activityData &&<DailyActivity activityData={activityData.sessions}/>}
         {averageSessionsData &&<Length averageSessionsData={averageSessionsData}/>}
         {perfData &&<Intensity perfData={perfData.data}/>}
         {mainData &&<Score scoreData={mainData.todayScore ?? mainData.score} />}
-        {macroData &&<Macro macroData={macroData} />} 
-      </section>
-    </div>
-  ):(
-    <div className="activityContainer">
-     {userData &&<h1>Bonjour<p className="username">{userData.firstName}</p></h1>}
-      <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
-      <section>
-        <DailyActivity activityData={activityData.sessions}/>
-        <Length averageSessionsData={averageSessionsData}/>
-        <Intensity perfData={perfData.data}/>
-        {mainData.todayScore &&<Score scoreData={mainData.todayScore} />}
-        {macroData &&<Macro macroData={macroData} />} 
+        {mainData &&<Macro macroData={mainData.keyData} />} 
       </section>
     </div>
   );

@@ -8,7 +8,7 @@ function FetchProvider({children}) {
     const toggleFetch = () => {
         setFetch(fetch === "api"?"mock":"api")
     }
-
+   
     return (
         <FetchContext.Provider value={{fetch, toggleFetch}}>
             {children}

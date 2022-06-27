@@ -39,9 +39,4 @@ Thué Grégory
 * The project uses the API as a base .
 * On the HomePage you can click on the useName to go on his dashboard
 
-## 2-MOCKED
-
-* If you want to switch with mocked data there's a button on the home page "utiliser les données mockées".
-* Click again or refresh to use back API
-
 

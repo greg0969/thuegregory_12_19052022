@@ -7,12 +7,7 @@ function Home() {
 
   const { toggleFetch, fetch } = useContext(FetchContext)
 
-  // if (fetch === "api") {
-  //   console.log("on utilise api")
-  // }
-  // if (fetch === "mock") {
-  //   console.log("on utilise mock")
-  // }
+  
   return (
       <div className="home">
         <div className="home__group">
