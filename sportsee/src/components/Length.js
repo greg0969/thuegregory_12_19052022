@@ -1,9 +1,7 @@
 import { YAxis, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
-// import Erreur from "./Erreur";
 import PropTypes from "prop-types";
 
 /**
- * @description Component Length
  * @param {array} averageSessionsData user's session
  * @returns {JSX} ReactComponent 
  */

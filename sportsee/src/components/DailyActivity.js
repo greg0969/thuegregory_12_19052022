@@ -2,9 +2,8 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 import PropTypes from "prop-types";
 
 /**
- * @description Component DailyActivity
  * @param {object} activityData user's data activity
- * @returns ReactComponent
+* @returns {JSX} ReactComponent
  */
 
 function DailyActivity({ activityData }) {

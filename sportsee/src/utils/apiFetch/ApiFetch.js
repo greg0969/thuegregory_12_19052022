@@ -4,32 +4,22 @@ import ConvertData from './ConvertData';
 
 
 
-function ApiFetch (url) {
+function ApiFetch(url) {
 
     const [data, setData] = useState(undefined);
-    // url = "f"
+
     useEffect(() => {
         fetch(url).then((response) => {
-                response.json().then((result) => {  
-                    setData(ConvertData(result,url))
-                    if (data === undefined) {
-                        return (
-                            <Navigate to="*" />
-                        )
-                      }
-                })
-        })
-       
-       
-    }, [url,data])
-    
-    
-    console.log(data)
+            response.json().then((result) => {
+                setData(ConvertData(result, url))
+            })
+        }, [])
+    })
 
-    return data ;
-    
-    
-    
+    return data;
+
+    // if (data) {
+    //     console.log("erreur")
+    // }
 }
-
 export default ApiFetch;

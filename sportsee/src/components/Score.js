@@ -3,9 +3,8 @@ import { PieChart, Pie, Cell } from 'recharts';
 import PropTypes from "prop-types";
 
 /**
- * @description Component Score
  * @param {object} scoreData user's score
- * @returns ReactComponent
+ * @returns {JSX} ReactComponent
  */
 
 function Score({ scoreData }) {

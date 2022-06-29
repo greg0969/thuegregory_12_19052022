@@ -3,10 +3,9 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import PropTypes from "prop-types";
 
 /**
- * @description Component Intensity
  * @param {perfData} perfData user's perf
- * @returns ReactComponent
- */
+* @returns {JSX} ReactComponent
+*/
 
 function Intensity({ perfData }) {
 

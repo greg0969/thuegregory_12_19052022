@@ -5,9 +5,8 @@ import lipidCount from "../assets/cheeseburger.png";
 import PropTypes from "prop-types";
 
 /**
- * @description Component Macro
  * @param {object} macroData user's keyData
- * @returns ReactComponent
+ * @returns {JSX} ReactComponent
  */
 
 function Macro ({ macroData }) {
