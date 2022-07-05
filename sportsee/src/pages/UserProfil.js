@@ -4,11 +4,11 @@ import Logo from "../components/Logo"
 import Nav from "../components/Nav"
 import SlideMenu from "../components/SideMenu"
 import Erreur from "../pages/Erreur"
-import { useParams, Navigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ApiFetch from "../utils/apiFetch/ApiFetch";
 import { urlMocked } from "../utils/const/urlMocked"
 import { urlApi } from "../utils/const/urlApi";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FetchContext } from "../utils/context/contextApi";
 
 function UserProfil() {

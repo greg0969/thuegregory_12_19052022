@@ -18,8 +18,5 @@ function ApiFetch(url) {
 
     return data;
 
-    // if (data) {
-    //     console.log("erreur")
-    // }
 }
 export default ApiFetch;
