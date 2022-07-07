@@ -176,7 +176,10 @@
     }
     .recharts-responsive-container {
       position: relative;
-      top: -2.85em;
+      top: -3.85em;
+      .recharts-wrapper {
+        padding-bottom: 1em;
+      }
     }
     .dayAxis {
       display: flex;
@@ -184,7 +187,7 @@
       position: relative;
       z-index: 10;
       width: auto;
-      bottom: 5.95em;
+      bottom: 6.2em;
       p {
         display: flex;
         width: inherit;
